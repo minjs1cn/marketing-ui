@@ -1,3 +1,19 @@
+import { ref } from 'vue'
+
+export function getSlot(ctx: any, name: string = 'default') {
+  const slotFunction = ctx.$slots[name] as Function
+  return slotFunction ? slotFunction() : ''
+}
+
+export function useEl<T>() {
+  const el = ref<T>()
+  const setEl = (ele: T) => {
+    el.value = ele
+  }
+
+  return [el, setEl] as const
+}
+
 function randomInt(max: number = 6, min: number = 0) {
   return Math.floor(Math.random() * (max - min)) + min
 }
@@ -21,5 +37,11 @@ export function fetch(duration: number = 2000): Promise<IResult> {
         data: randomInt()
       })
     }, duration)
+  })
+}
+
+export function delay(duration: number = 1000) {
+  return new Promise(resolve => {
+    setTimeout(resolve, duration)
   })
 }

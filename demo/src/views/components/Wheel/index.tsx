@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, reactive, toRefs } from 'vue'
-import { fetch } from '../../shared/demo-utils'
+import { fetch } from '../../../shared/utils'
 import { useRotate } from 'marketing-ui'
 import './index.less'
 
@@ -9,11 +9,6 @@ export default defineComponent({
       angle: 0
     })
 
-
-    const onStart = async () => {
-      const { data } = await fetch()
-    }
-
     const hooks = useRotate((angle: number) => {
       state.angle = angle
     })
@@ -21,6 +16,18 @@ export default defineComponent({
     onMounted(() => {
       hooks.idled()
     })
+
+    const onStart = async () => {
+      hooks.start()
+      const { data } = await fetch()
+      hooks.to({
+        duration: 2000,
+        index: data,
+        complete: () => {
+          console.log('中奖啦', data)
+        }
+      })
+    }
 
     return {
       ...toRefs(state),

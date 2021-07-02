@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import Router from './router'
 import App from './App'
-import MarketingUI from '../es'
-import '../es/index.less'
+import MarketingUI from 'marketing-ui'
+import 'marketing-ui/index.less'
 import DemoBlock from './components/DemoBlock'
 
 import './index.less'

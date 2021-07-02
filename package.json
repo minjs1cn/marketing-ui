@@ -1,20 +1,28 @@
 {
   "name": "marketing-ui-vue3",
   "version": "0.0.0",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "types": "./types/index.d.ts",
+  "typings": "./types/index.d.ts",
   "scripts": {
-    "dev": "any-cli build-vuec --watch --dev && tsc --watch",
+    "dev": "npm run dev:build & npm run dev:ts",
+    "dev:build": "any-cli build-vuec --watch",
+    "dev:ts": "tsc --watch",
     "dev:demo": "vite",
+    "dev:docs": "docsify serve docs",
+    "build": "npm run build:demo && npm run build:com",
     "build:demo": "vue-tsc --noEmit && vite build",
-    "serve:docs": "docsify serve docs",
     "build:com": "any-cli build-vuec"
   },
   "dependencies": {
     "popmotion": "^9.4.0",
+    "tiny-emitter": "^2.1.0",
     "vue": "^3.0.5",
     "vue-router": "^4.0.10"
   },
   "devDependencies": {
-    "@minjs1cn/any-cli": "^2.0.5",
+    "@minjs1cn/any-cli": "^2.0.8",
     "@types/node": "^15.12.5",
     "@vitejs/plugin-legacy": "^1.4.3",
     "@vitejs/plugin-vue": "^1.2.3",

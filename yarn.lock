@@ -912,10 +912,10 @@
     "@babel/helper-validator-identifier" "^7.14.5"
     to-fast-properties "^2.0.0"
 
-"@minjs1cn/any-cli@^2.0.5":
-  version "2.0.5"
-  resolved "https://registry.nlark.com/@minjs1cn/any-cli/download/@minjs1cn/any-cli-2.0.5.tgz#044f33bb4bc3cd762d0d6d3a5ef8ae6931883624"
-  integrity sha1-BE8zu0vDzXYtDW06XviuaTGINiQ=
+"@minjs1cn/any-cli@^2.0.8":
+  version "2.0.8"
+  resolved "https://registry.nlark.com/@minjs1cn/any-cli/download/@minjs1cn/any-cli-2.0.8.tgz?cache=0&sync_timestamp=1625044639883&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40minjs1cn%2Fany-cli%2Fdownload%2F%40minjs1cn%2Fany-cli-2.0.8.tgz#eb51b589005c7642785df5de45d16572cfa24d9d"
+  integrity sha1-61G1iQBcdkJ4XfXeRdFlcs+iTZ0=
   dependencies:
     "@minjs1cn/compiler" "^2.0.2"
     chalk "^4.1.1"
@@ -3303,6 +3303,11 @@ term-size@^2.1.0:
   version "2.2.1"
   resolved "https://registry.npm.taobao.org/term-size/download/term-size-2.2.1.tgz#2a6a54840432c2fb6320fea0f415531e90189f54"
   integrity sha1-KmpUhAQywvtjIP6g9BVTHpAYn1Q=
+
+tiny-emitter@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/tiny-emitter/download/tiny-emitter-2.1.0.tgz#1d1a56edfc51c43e863cbb5382a72330e3555423"
+  integrity sha1-HRpW7fxRxD6GPLtTgqcjMONVVCM=
 
 tinydate@^1.3.0:
   version "1.3.0"

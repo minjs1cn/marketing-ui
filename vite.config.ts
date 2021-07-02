@@ -15,5 +15,9 @@ export default defineConfig({
     alias: {
       'marketing-ui': path.resolve(__dirname, 'es')
     }
+  },
+  base: '/demo/',
+  build: {
+    outDir: 'docs/demo'
   }
 })

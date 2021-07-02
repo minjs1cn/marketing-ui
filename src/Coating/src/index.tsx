@@ -1,8 +1,11 @@
 import { defineComponent } from 'vue'
-import './index.less'
 
 export default defineComponent({
+  name: 'mk-coating',
+
   render() {
-    return <h1>home</h1>
+    return  <canvas
+      class="mk-coating"
+    ></canvas>
   }
 })
