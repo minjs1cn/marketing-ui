@@ -14,27 +14,27 @@ export function useEl<T>() {
   return [el, setEl] as const
 }
 
-function randomInt(max: number = 6, min: number = 0) {
+export function randomInt(max: number = 6, min: number = 0) {
   return Math.floor(Math.random() * (max - min)) + min
 }
 
-function randomSuccess() {
+export function randomTrue() {
   return Math.random() > 0.5 ? true : false
 }
 
-interface IResult {
+interface IResult<T> {
   code: number
   success: boolean
-  data: number
+  data: T
 }
 
-export function fetch(duration: number = 2000): Promise<IResult> {
+export function fetch<T>(data: T, duration: number = 2000): Promise<IResult<T>> {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve({
         code: 0,
-        success: randomSuccess(),
-        data: randomInt()
+        success: randomTrue(),
+        data
       })
     }, duration)
   })

@@ -9,10 +9,6 @@ export interface IToProps {
   complete: () => void
 }
 
-function getAngleRangeByIndex(index: number) {
-  return [0 - 60 * index, 60 - 60 * index]
-}
-
 export class Rotate {
   private onUpdate: TOnUpdate
   private angle: number
@@ -75,7 +71,7 @@ export class Rotate {
       to = data.to;
     } else if (data.index !== undefined) {
       if (data.index < 0 || data.index > 6) throw Error("index 范围 0-5")
-      const angles = getAngleRangeByIndex(data.index)
+      const angles = this.getAngleRangeByIndex(data.index)
       to = (angles[0] + angles[1]) / 2
     }
 
@@ -99,6 +95,15 @@ export class Rotate {
    */
   public stop() {
     this.tw?.stop()
+  }
+
+  /**
+   * 根据目标下标获取角度范围
+   * @param index 目标下标
+   * @returns 
+   */
+   public getAngleRangeByIndex(index: number) {
+    return [0 - 60 * index, 60 - 60 * index]
   }
 }
 

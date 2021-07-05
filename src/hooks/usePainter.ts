@@ -14,8 +14,11 @@ enum ECoatingStatus {
 }
 
 export interface IPainterOptions {
-  el: HTMLCanvasElement
+  /** HTMLCanvasElement */
+  el: HTMLCanvasElement | string
+  /** devicePixelRatio */
   dpr?: number
+  /** 涂层 */
   coating?: string
 }
 
@@ -64,10 +67,10 @@ class Painter extends TinyEmitter {
     return this._status
   }
 
-  private _el: HTMLCanvasElement
+  private _el: HTMLCanvasElement | undefined
   /** Canvas */
   public get el() {
-    return this._el
+    return this._el as HTMLCanvasElement
   }
 
   /**
@@ -75,6 +78,9 @@ class Painter extends TinyEmitter {
    * @param param0 
    */
   public init({ el, dpr, coating }: IPainterOptions) {
+    if (typeof el === 'string') {
+      el = document.querySelector(el)! as HTMLCanvasElement
+    }
     this._ctx = el.getContext('2d') as CanvasRenderingContext2D
     this._dpr = dpr || window.devicePixelRatio
     this._el = el

@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, reactive, toRefs } from 'vue'
-import { fetch } from '../../../shared/utils'
+import { fetch, randomInt } from '../../../shared/utils'
 import { useRotate } from 'marketing-ui'
 import './index.less'
 
@@ -19,7 +19,7 @@ export default defineComponent({
 
     const onStart = async () => {
       hooks.start()
-      const { data } = await fetch()
+      const { data } = await fetch<number>(randomInt())
       hooks.to({
         duration: 2000,
         index: data,

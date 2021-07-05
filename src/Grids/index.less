@@ -1,0 +1,33 @@
+@import '../shared/styles/index.less';
+
+.mk {
+  &-grids {
+    
+    &-wrapper {
+      position: relative;
+      .wh();
+
+      &__top {
+        .atl();
+        .flex-row();
+        right: 0;
+      }
+
+      &__right {
+        .atr(0, 0);
+        .flex-column();
+      }
+
+      &__bottom {
+        .abr(0, 0);
+        left: 0;
+        .flex-row-reverse();
+      }
+
+      &__left {
+        .atl(0, 0);
+        .flex-column-reverse();
+      }
+    }
+  }
+}
