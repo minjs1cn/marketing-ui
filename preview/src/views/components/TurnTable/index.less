@@ -1,0 +1,29 @@
+@import '../../../shared/styles/index.less';
+
+.turntable {
+  position: relative;
+  .wh(300, 300);
+
+  &-btn {
+    .acm();
+    .wh(90, 105);
+    .bg('wheel/btn-pointer.png');
+
+    &__inner {
+      margin: 12px auto;
+      .wh(80, 80);
+      .bg('start-btn.png');
+      animation: wheelBtnhuxi 1s linear infinite;
+
+      @keyframes wheelBtnhuxi {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(0.85);
+        }
+      }
+    }
+  }
+}
