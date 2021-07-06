@@ -9,6 +9,7 @@
     "type": "git",
     "url": "git@github.com:minjs1cn/marketing-ui.git"
   },
+  "homepage": "https://minjs1cn.github.io/marketing-ui",
   "scripts": {
     "dev": "npm run dev:build & npm run dev:ts",
     "dev:build": "any-cli build-vuec --watch",
