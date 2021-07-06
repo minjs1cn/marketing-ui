@@ -9,7 +9,7 @@ export default defineComponent({
     const painer = usePainter()
 
     painer.onTouchstart(async () => {
-      const { data } = await fetch<string>('/prize_banner.jpeg')
+      const { data } = await fetch<string>('/marketing-ui/prize_banner.jpeg')
       state.prize = data
     })
 
@@ -22,7 +22,7 @@ export default defineComponent({
         painer.clear()
         delay(2000).then(() => {
           state.prize = ''
-          painer.reset('/coating/coating.png')
+          painer.reset('/marketing-ui/coating/coating.png')
         })
       }
     })
@@ -30,7 +30,7 @@ export default defineComponent({
     onMounted(() => {
       painer.init({
         el: '#my-coating',
-        coating: '/coating/coating.png'
+        coating: '/marketing-ui/coating/coating.png'
       })
     })
 
