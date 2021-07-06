@@ -32,7 +32,7 @@
             var path = vm.route.path
             var iframe = ''
             if (ignores.indexOf(path) === -1) {
-              iframe = '<iframe class="demo" scrolling="node" src="/demo/#'+ path + '"></iframe>'
+              iframe = '<iframe class="demo" scrolling="node" src="/marketing-ui/demo/#'+ path + '"></iframe>'
             }
             next(iframe + html)
           })
