@@ -16,7 +16,7 @@ export default defineConfig({
       'marketing-ui': path.resolve(__dirname, 'es')
     }
   },
-  base: '/demo/',
+  base: '/marketing-ui/demo/',
   build: {
     outDir: 'docs/demo'
   }
