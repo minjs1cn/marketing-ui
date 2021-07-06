@@ -1,27 +1,66 @@
-# Vue 3 + Typescript + Vite
+# 介绍
 
-This template should help get you started developing with Vue 3 and Typescript in Vite.
+marketing-ui 致力于给程序员提供快速开发互动/营销等页面的能力
 
-## Recommended IDE Setup
+> 组件库依赖于Vue3的能力，但是部分组件是纯 canvas 渲染，也就是说你也可以在react 等其他框架下使用某些组件。
 
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
+## 使用
 
-### If Using `<script setup>`
+```bash
+yarn add marketing-ui
+```
 
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
+完整引入
 
-## Type Support For `.vue` Imports in TS
+```ts
+import { createApp } from 'vue'
+import MKUI from 'marketing-ui'
+const app = createApp()
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
+app.use(MKUI)
+```
 
-### If Using Volar
+按需引入
 
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
+```tsx
+import { defineComponent, onMounted, reactive, toRefs } from 'vue'
+import { Wheel, sueRotate } from 'marketing-ui'
 
-### If Using Vetur
+export default defineComponent({
+  setup() {
+    const state = reactive({
+      angle: 0
+    })
 
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette
-5. Search and run "Select TypeScript version" -> "Use workspace version"
+    const hooks = useRotate((angle: number) => {
+      state.angle = angle
+    })
+
+    onMounted(() => {
+      hooks.idled()
+    })
+
+    return {
+      ...toRefs(state)
+    }
+  },
+
+  render() {
+    return <Wheel angle={this.angle} />
+  }
+})
+```
+
+## 理念
+
+互动组件库的开发理念和其他组件库存在差异，归根结底是因为互动组件本身存在非常多的效果/状态等，为了解耦UI和效果，我们设计如下：
+
+![111](assets/1.jpg)
+
+每一个互动组件都由 hooks 和 ui 两部分构成，ui 负责DOM结构，hooks 负责效果驱动（hooks 不依赖于 vue3 的能力）。当然，某些组件因为是 canvas 渲染，ui 只是一个 canvas 节点，hooks 不仅负责效果，还负责内容渲染。
+
+> 这也是为什么某些组件可以不依赖 vue3，在其他框架下运行的原因。甚至你可以使用其他框架渲染 ui，搭配组件库的 hooks，一样可以使用。
+
+## 未来
+
+最初的想法是发布三个仓库，分别支持 vue2、vue3 及 react，但是经过这段时间的编码和思考，可能后面会完全用 canvas 来渲染，这样就可以支持任意环境下使用了。

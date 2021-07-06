@@ -30,10 +30,9 @@
           hook.afterEach(function(html, next) {
             var file = vm.route.file
             var path = vm.route.path
-            var title = vm.compiler.cacheTOC[file][0].title
             var iframe = ''
             if (ignores.indexOf(path) === -1) {
-              iframe = '<iframe class="demo" scrolling="node" src="http://localhost:3001/demo/#'+ path + '/' + encodeURIComponent(title) +'"></iframe>'
+              iframe = '<iframe class="demo" scrolling="node" src="/demo/#'+ path + '"></iframe>'
             }
             next(iframe + html)
           })

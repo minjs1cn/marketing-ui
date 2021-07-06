@@ -1,10 +1,14 @@
 {
-  "name": "marketing-ui-vue3",
+  "name": "marketing-ui",
   "version": "0.0.0",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "types": "./types/index.d.ts",
   "typings": "./types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:minjs1cn/marketing-ui.git"
+  },
   "scripts": {
     "dev": "npm run dev:build & npm run dev:ts",
     "dev:build": "any-cli build-vuec --watch",

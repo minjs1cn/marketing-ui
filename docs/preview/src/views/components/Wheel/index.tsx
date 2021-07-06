@@ -2,7 +2,7 @@ import { defineComponent, onMounted, reactive, toRefs } from 'vue'
 import { fetch, randomInt } from '../../../shared/utils'
 import { useRotate } from 'marketing-ui'
 import './index.less'
-
+/// [demo]
 export default defineComponent({
   setup() {
     const state = reactive({
@@ -62,3 +62,4 @@ export default defineComponent({
     </demo-block>
   }
 })
+/// [demo]
