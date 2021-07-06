@@ -1,7 +1,0 @@
-{
-  "name": "marketing-ui",
-  "version": "0.0.0",
-  "main": "../../../lib/index.js",
-  "module": "../../../es/index.js",
-  "typings": "../../../types/index.d.ts"
-}

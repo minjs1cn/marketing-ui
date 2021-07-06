@@ -15,8 +15,8 @@
     "dev:build": "any-cli build-vuec --watch",
     "dev:ts": "tsc --watch",
     "dev:demo": "vite",
-    "dev:docs": "docsify serve docs",
-    "build": "npm run build:demo && npm run build:com",
+    "dev:docs": "docsify serve preview",
+    "build": "npm run build:com && npm run build:demo",
     "build:demo": "vue-tsc --noEmit && vite build",
     "build:com": "any-cli build-vuec"
   },

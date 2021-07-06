@@ -19,8 +19,11 @@
   <script>
     window.$docsify = {
       loadSidebar: true,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
       name: 'Marketing UI',
-      repo: 'https://github.com/docsifyjs/docsify/',
+      repo: 'https://github.com/minjs1cn/marketing-ui',
       themeColor: '#3F51B5',
       formatUpdated: '{MM}/{DD} {HH}:{mm}',
       search: 'auto',
@@ -32,7 +35,8 @@
             var path = vm.route.path
             var iframe = ''
             if (ignores.indexOf(path) === -1) {
-              iframe = '<iframe class="demo" scrolling="node" src="/marketing-ui/demo/#'+ path + '"></iframe>'
+              path = path.replace('/components', '')
+              iframe = '<iframe class="demo" scrolling="node" src="/marketing-ui/demo.html#'+ path + '"></iframe>'
             }
             next(iframe + html)
           })

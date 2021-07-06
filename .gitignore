@@ -6,5 +6,6 @@ dist-ssr
 types
 es
 lib
+docs
 src/index.ts
 src/index.less
