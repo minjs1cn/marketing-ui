@@ -22,7 +22,7 @@ export default defineComponent({
           title: `1等奖`,
           color: index % 2 === 0 ? '#fff' : '#f47920',
           // angle: index === 5 ? 110 : 50,
-          image: `/option/option_${index+1}.png`,
+          image: `/marketing-ui/option/option_${index+1}.png`,
           backgroundColor: index % 2 === 0 ? '#f47920' : '#fff'
         }
       )))
@@ -55,9 +55,9 @@ export default defineComponent({
     return <demo-block>
       <div class="turntable">
         <canvas id="my-turnTable" style={this.style} />
-        {/* <div class="turntable-btn" onClick={this.onStart}>
+        <div class="turntable-btn" onClick={this.onStart}>
           <div class="turntable-btn__inner"></div>
-        </div> */}
+        </div>
       </div>
     </demo-block>
   }

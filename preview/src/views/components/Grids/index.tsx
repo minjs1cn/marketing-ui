@@ -22,7 +22,7 @@ export default defineComponent({
       options: Array.from({length: 8}).map((_, index) => (
         {
           title: `${index+1}等奖`,
-          image: `/option/option_${index+1}.png`
+          image: `/marketing-ui/option/option_${index+1}.png`
         }
       ))
     }

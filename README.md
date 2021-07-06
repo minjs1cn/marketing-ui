@@ -55,7 +55,7 @@ export default defineComponent({
 
 互动组件库的开发理念和其他组件库存在差异，归根结底是因为互动组件本身存在非常多的效果/状态等，为了解耦UI和效果，我们设计如下：
 
-![111](public/hooks-ui.jpg)
+![111](preview/images/hooks-ui.jpg)
 
 每一个互动组件都由 hooks 和 ui 两部分构成，ui 负责DOM结构，hooks 负责效果驱动（hooks 不依赖于 vue3 的能力）。当然，某些组件因为是 canvas 渲染，ui 只是一个 canvas 节点，hooks 不仅负责效果，还负责内容渲染。
 

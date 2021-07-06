@@ -13,7 +13,7 @@ export default defineComponent({
   render() {
     return <div class="demo-home">
       <h1 class="demo-home__title">
-        <img src="/logo.png" alt="" />
+        <img src="/marketing-ui/logo.png" alt="" />
         <span>Marketing UI</span>
       </h1>
       <h2 class="demo-home__desc">
