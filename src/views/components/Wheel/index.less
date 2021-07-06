@@ -16,12 +16,14 @@
   &-btn {
     .acm();
     .wh(90, 105);
-    .bg('wheel/btn-pointer.png');
+    .bg();
+    background-image: url('/wheel/btn-pointer.png');
 
     &__inner {
       margin: 12px auto;
       .wh(80, 80);
-      .bg('start-btn.png');
+      .bg();
+      background-image: url('/start-btn.png');
       animation: wheelBtnhuxi 1s linear infinite;
 
       @keyframes wheelBtnhuxi {

@@ -4,4 +4,4 @@
 
 * 组件
 
-  * [大转盘](/wheel)
+  * [大转盘](/components/wheel)
