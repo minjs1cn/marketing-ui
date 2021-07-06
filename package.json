@@ -18,7 +18,10 @@
     "dev:docs": "docsify serve preview",
     "build": "npm run build:com && npm run build:demo",
     "build:demo": "vue-tsc --noEmit && vite build",
-    "build:com": "any-cli build-vuec"
+    "build:com": "any-cli build-vuec",
+    "rn": "mv dist/index.html dist/demo.html",
+    "cp": "cp -r preview docs",
+    "mv": "mv dist/* docs"
   },
   "dependencies": {
     "popmotion": "^9.4.0",

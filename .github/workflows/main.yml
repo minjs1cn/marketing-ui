@@ -31,6 +31,9 @@ jobs:
           yarn install
           yarn build:com
           yarn build:demo
+          yarn rn
+          yarn cp
+          yarn mv
 
       # Runs a set of commands using the runners shell
       - name: Deploy
