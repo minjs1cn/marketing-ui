@@ -1,20 +1,6 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-import path from 'path'
+import { defineConfig } from 'vite';
+import pkg from './package.json';
 
 export default defineConfig({
-  server: {
-    port: 3001
-  },
-  plugins: [
-    vue(),
-    vueJsx()
-  ],
-  resolve: {
-    alias: {
-      'marketing-ui': path.resolve(__dirname, 'es'),
-    }
-  },
-  base: '/marketing-ui/'
-})
+	base: process.env.NODE_ENV !== 'production' ? '/' : `/${pkg.name}/`,
+});
