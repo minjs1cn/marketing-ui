@@ -5,12 +5,9 @@ export function createApp(options?: IApplicationOptions) {
 		width: 300,
 		height: 300,
 		resolution: window.devicePixelRatio || 1,
-		backgroundAlpha: 0,
+		// backgroundAlpha: 0,
 		...options,
 	});
-
-	app.view.width = 300;
-	app.view.height = 300;
 
 	app.view.style.width = '100%';
 	app.view.style.height = '100%';
